@@ -1,0 +1,1302 @@
+{
+  "exportVersion": 10,
+  "dashboards": {
+    "dashboard-1": {
+      "title": "E-Commerce Kafka Analytics Dashboard",
+      "layout": [
+        {
+          "w": 3,
+          "h": 2,
+          "x": 0,
+          "y": 0,
+          "i": "item-1"
+        },
+        {
+          "w": 3,
+          "h": 2,
+          "x": 3,
+          "y": 0,
+          "i": "item-2"
+        },
+        {
+          "w": 3,
+          "h": 2,
+          "x": 6,
+          "y": 0,
+          "i": "item-3"
+        },
+        {
+          "w": 3,
+          "h": 2,
+          "x": 9,
+          "y": 0,
+          "i": "item-4"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 2,
+          "i": "item-5"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 2,
+          "i": "item-6"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 5,
+          "i": "item-7"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 5,
+          "i": "item-8"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 8,
+          "i": "item-9"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 8,
+          "i": "item-10"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 11,
+          "i": "item-11"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 11,
+          "i": "item-12"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 14,
+          "i": "item-13"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 14,
+          "i": "item-14"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 17,
+          "i": "item-15"
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 17,
+          "i": "item-16"
+        },
+        {
+          "w": 12,
+          "h": 3,
+          "x": 0,
+          "y": 20,
+          "i": "item-17"
+        }
+      ],
+      "description": "Analytics dashboard built from the six Kafka event streams in Assignment 2.",
+      "embedding": {
+        "anonymousAuthEnabled": false
+      },
+      "filters": []
+    }
+  },
+  "items": {
+    "item-1": {
+      "title": "Total Orders",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-1",
+      "iconValue": "number",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "value": {
+          "field": "order_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "value": {}
+        },
+        "channels": {
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Orders"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Number",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "7584e05f-bc92-422a-af78-c619517382ac"
+      }
+    },
+    "item-2": {
+      "title": "Total Revenue",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-5",
+      "iconValue": "number",
+      "itemType": "chart",
+      "filters": [
+        {
+          "fieldPath": "status",
+          "disabled": false,
+          "type": "String",
+          "settings": {
+            "allOthers": false,
+            "values": [
+              "SUCCESS"
+            ]
+          }
+        }
+      ],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "value": {
+          "field": "amount",
+          "type": "quantitative",
+          "inferredType": "Number",
+          "channelType": "aggregation",
+          "aggregate": "sum"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "value": {}
+        },
+        "channels": {
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Revenue (INR)"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Number",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "c8520311-3d25-4bd8-ab94-e1aa68214a1c"
+      }
+    },
+    "item-3": {
+      "title": "Successful Payments",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-5",
+      "iconValue": "number",
+      "itemType": "chart",
+      "filters": [
+        {
+          "fieldPath": "status",
+          "disabled": false,
+          "type": "String",
+          "settings": {
+            "allOthers": false,
+            "values": [
+              "SUCCESS"
+            ]
+          }
+        }
+      ],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "value": {
+          "field": "transaction_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "value": {}
+        },
+        "channels": {
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Successful payments"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Number",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "2214244c-d0c0-4327-8791-f2dd5fb6c0e3"
+      }
+    },
+    "item-4": {
+      "title": "Open Customer Tickets",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-6",
+      "iconValue": "number",
+      "itemType": "chart",
+      "filters": [
+        {
+          "fieldPath": "status",
+          "disabled": false,
+          "type": "String",
+          "settings": {
+            "allOthers": false,
+            "values": [
+              "OPEN"
+            ]
+          }
+        }
+      ],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "value": {
+          "field": "ticket_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "value": {}
+        },
+        "channels": {
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Open tickets"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Number",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "480c092e-9ce3-45d1-8ca7-ffa6b1c26e37"
+      }
+    },
+    "item-5": {
+      "title": "Orders by Status",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-1",
+      "iconValue": "bar-grouped",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "y": {
+          "field": "status",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "x": {
+          "field": "order_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "x": {}
+        },
+        "channels": {
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Order status"
+            }
+          },
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Orders"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Grouped Bar",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "2cc7f1ee-2bad-40da-a145-f392680addfb"
+      }
+    },
+    "item-6": {
+      "title": "Orders by Event Type",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-1",
+      "iconValue": "donut",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "label": {
+          "field": "event_type",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "value": {
+          "field": "order_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {},
+        "channels": {
+          "label": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Event type"
+            }
+          },
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Orders"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Donut",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "fafe687e-ff45-4a9c-8912-d79b13cfe961"
+      }
+    },
+    "item-7": {
+      "title": "Revenue by Payment Method",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-5",
+      "iconValue": "bar-grouped",
+      "itemType": "chart",
+      "filters": [
+        {
+          "fieldPath": "status",
+          "disabled": false,
+          "type": "String",
+          "settings": {
+            "allOthers": false,
+            "values": [
+              "SUCCESS"
+            ]
+          }
+        }
+      ],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "x": {
+          "field": "method",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative",
+          "inferredType": "Number",
+          "channelType": "aggregation",
+          "aggregate": "sum"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "y": {}
+        },
+        "channels": {
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Payment method"
+            }
+          },
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Revenue (INR)"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Grouped Bar",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "519b2591-9afb-4655-ab6d-85e1269d8b8e"
+      }
+    },
+    "item-8": {
+      "title": "Payment Status Mix",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-5",
+      "iconValue": "donut",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "label": {
+          "field": "status",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "value": {
+          "field": "transaction_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {},
+        "channels": {
+          "label": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Payment status"
+            }
+          },
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Transactions"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Donut",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "a5d9b0b1-353e-435d-9dd2-2846b4344459"
+      }
+    },
+    "item-9": {
+      "title": "Average Price by Category",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-2",
+      "iconValue": "bar-grouped",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "x": {
+          "field": "category",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "inferredType": "Number",
+          "channelType": "aggregation",
+          "aggregate": "mean"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "y": {}
+        },
+        "channels": {
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Category"
+            }
+          },
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Average price (INR)"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Grouped Bar",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "1e40daf3-ccfc-4bca-89b8-6fd1f28d514f"
+      }
+    },
+    "item-10": {
+      "title": "Average Discount by Category",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-2",
+      "iconValue": "bar-grouped",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "x": {
+          "field": "category",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "y": {
+          "field": "discount_pct",
+          "type": "quantitative",
+          "inferredType": "Number",
+          "channelType": "aggregation",
+          "aggregate": "mean"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "y": {}
+        },
+        "channels": {
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Category"
+            }
+          },
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Average discount (%)"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Grouped Bar",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "df586af1-438a-42da-8f1d-decf6a758030"
+      }
+    },
+    "item-11": {
+      "title": "Stock by Warehouse",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-3",
+      "iconValue": "bar-grouped",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "x": {
+          "field": "warehouse_id",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "y": {
+          "field": "stock_qty",
+          "type": "quantitative",
+          "inferredType": "Number",
+          "channelType": "aggregation",
+          "aggregate": "sum"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "y": {}
+        },
+        "channels": {
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Warehouse"
+            }
+          },
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Stock quantity"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Grouped Bar",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "ed856cb9-2d81-4d14-b5d0-90dd7a894796"
+      }
+    },
+    "item-12": {
+      "title": "Low Stock Products",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-3",
+      "iconValue": "data-table",
+      "itemType": "chart",
+      "filters": [
+        {
+          "fieldPath": "stock_qty",
+          "disabled": false,
+          "type": "Number",
+          "settings": {
+            "min": {
+              "enabled": false,
+              "inclusive": true,
+              "value": ""
+            },
+            "max": {
+              "enabled": true,
+              "inclusive": true,
+              "value": "50"
+            }
+          }
+        }
+      ],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "group": {
+          "field": "product_id",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "value": {
+          "field": "stock_qty",
+          "type": "quantitative",
+          "inferredType": "Number",
+          "channelType": "aggregation",
+          "aggregate": "mean"
+        },
+        "value_series_0": {
+          "field": "warehouse_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {
+          "totalsColumn": {
+            "enabled": false,
+            "value": null
+          }
+        },
+        "axes": {},
+        "channels": {
+          "group": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Product"
+            }
+          },
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Stock qty"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          },
+          "value_series_0": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Warehouse records"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Data Table",
+      "meta": {
+        "sortModel": [
+          {
+            "colId": "value",
+            "sort": "asc"
+          }
+        ]
+      },
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "1fce99dc-8f12-4680-bcf1-2de352023d3a"
+      }
+    },
+    "item-13": {
+      "title": "Shipments by Carrier",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-4",
+      "iconValue": "bar-grouped",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "x": {
+          "field": "carrier",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "y": {
+          "field": "shipment_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "y": {}
+        },
+        "channels": {
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Carrier"
+            }
+          },
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Shipments"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Grouped Bar",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "afd27fc4-c88b-4fee-83bf-0e09e09689fe"
+      }
+    },
+    "item-14": {
+      "title": "Shipment Status Mix",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-4",
+      "iconValue": "donut",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "label": {
+          "field": "status",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "value": {
+          "field": "shipment_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {},
+        "channels": {
+          "label": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Shipment status"
+            }
+          },
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Shipments"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Donut",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "0082b272-7d76-4597-91b1-ee895d236ee0"
+      }
+    },
+    "item-15": {
+      "title": "Customer Complaints by Reason",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-6",
+      "iconValue": "bar-grouped",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "x": {
+          "field": "reason",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "y": {
+          "field": "ticket_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "y": {}
+        },
+        "channels": {
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Complaint reason"
+            }
+          },
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Tickets"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Grouped Bar",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "dd4b6be5-91d1-4add-9712-4aa2f5f0223b"
+      }
+    },
+    "item-16": {
+      "title": "Customer Ticket Status",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-6",
+      "iconValue": "donut",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "label": {
+          "field": "status",
+          "type": "nominal",
+          "inferredType": "String",
+          "transformedType": "String",
+          "channelType": "category"
+        },
+        "value": {
+          "field": "ticket_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {},
+        "channels": {
+          "label": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Ticket status"
+            }
+          },
+          "value": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Tickets"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Donut",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "43024e94-481d-4199-b7b4-0edf04a4b197"
+      }
+    },
+    "item-17": {
+      "title": "Orders Over Time",
+      "description": "",
+      "dashboardId": "dashboard-1",
+      "dataSourceId": "data-source-1",
+      "iconValue": "line",
+      "itemType": "chart",
+      "filters": [],
+      "missedFields": [],
+      "lookupFields": [],
+      "convertedFields": [],
+      "calculatedFields": [],
+      "channels": {
+        "x": {
+          "field": "timestamp",
+          "type": "temporal",
+          "inferredType": "Date",
+          "channelType": "category"
+        },
+        "y": {
+          "field": "order_id",
+          "type": "quantitative",
+          "inferredType": "String",
+          "channelType": "aggregation",
+          "aggregate": "count"
+        }
+      },
+      "reductions": {},
+      "customisations": {
+        "options": {},
+        "axes": {
+          "x": {},
+          "y": {}
+        },
+        "channels": {
+          "x": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Time"
+            }
+          },
+          "y": {
+            "labelOverride": {
+              "enabled": true,
+              "value": "Orders"
+            },
+            "numberFormatting": {
+              "enabled": true,
+              "value": "Default"
+            }
+          }
+        },
+        "conditionalFormatting": []
+      },
+      "chartType": "Line",
+      "meta": {},
+      "sample": false,
+      "query": null,
+      "queryId": null,
+      "interactiveFiltering": "highlight",
+      "embedding": {
+        "id": "5218bb8b-ba40-4258-a874-2e9e4c2349b0"
+      }
+    }
+  },
+  "dataSources": {
+    "data-source-1": {
+      "alias": "E-Commerce: Orders",
+      "collection": "orders",
+      "database": "ecommerce_db",
+      "deployment": "ecommerce-cluster",
+      "sourceType": "cluster"
+    },
+    "data-source-2": {
+      "alias": "E-Commerce: Catalogue",
+      "collection": "catalogue",
+      "database": "ecommerce_db",
+      "deployment": "ecommerce-cluster",
+      "sourceType": "cluster"
+    },
+    "data-source-3": {
+      "alias": "E-Commerce: Inventory",
+      "collection": "inventory",
+      "database": "ecommerce_db",
+      "deployment": "ecommerce-cluster",
+      "sourceType": "cluster"
+    },
+    "data-source-4": {
+      "alias": "E-Commerce: Shipments",
+      "collection": "shipments",
+      "database": "ecommerce_db",
+      "deployment": "ecommerce-cluster",
+      "sourceType": "cluster"
+    },
+    "data-source-5": {
+      "alias": "E-Commerce: Payments",
+      "collection": "payments",
+      "database": "ecommerce_db",
+      "deployment": "ecommerce-cluster",
+      "sourceType": "cluster"
+    },
+    "data-source-6": {
+      "alias": "E-Commerce: Customer Service",
+      "collection": "customer_service",
+      "database": "ecommerce_db",
+      "deployment": "ecommerce-cluster",
+      "sourceType": "cluster"
+    }
+  },
+  "queries": {}
+}
